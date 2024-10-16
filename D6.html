@@ -83,32 +83,60 @@
       /* ESERCIZIO 1
        Scrivi una funzione per cambiare il titolo della pagina in qualcos'altro
     */
+      const changeTitle = function () {
+       const title = document.querySelector("h1")
+       title.innerText = "nuovo titolo"
+      };
 
-      const changeTitle = function () {}
-
+      changeTitle ();
+      
       /* ESERCIZIO 2
        Scrivi una funzione per aggiungere al titolo della pagina una classe "myHeading"
     */
 
-      const addClassToTitle = function () {}
+      const addClassToTitle = function () {
+        const classe = document.querySelector ("h1")
+        classe.classList.add("myHeading")
+      };
+      addClassToTitle ();
 
       /* ESERCIZIO 3
        Scrivi una funzione che cambi il testo dei p figli di un div
       */
 
-      const changePcontent = function () {}
+      const changePcontent = function () {
+        const paragraph = document.querySelectorAll ("div p")
+        for (let i = 0; i < paragraph.length; i ++) {
+          paragraph [i].innerText = "nuovo testo"
+        }
+      }
+      changePcontent ();
 
       /* ESERCIZIO 4
        Scrivi una funzione che cambi la proprietà href di ogni link (tranne quello nel footer) con il valore https://www.google.com
       */
 
-      const changeUrls = function () {}
+      const changeUrls = function () { 
+        const links = document.querySelectorAll ("a:not(footer a)")
+        for (let i = 0; i< links.length; i ++ ) {
+          links[i].href = " https://www.google.com"
+        } for (let i = 0; i< links.length; i ++ ) {
+          links[i].innerText = " https://www.google.com"
+        };
+      };
+     
+      changeUrls ();
 
       /* ESERCIZIO 5
        Scrivi una funzione che aggiunga un nuovo elemento lista alla seconda lista non ordinata
     */
-
-      const addToTheSecond = function () {}
+      const ulist2 = document.getElementById ("secondList");
+      const addToTheSecond = function(content) {
+        const lista = document.createElement("li");
+        lista.innerText = content;
+        ulist2.appendChild(lista);
+      };
+      addToTheSecond ("nuovo elemento")
 
       /* ESERCIZIO 6
        Scrivi una funzione che aggiunga un paragrafo al primo div
